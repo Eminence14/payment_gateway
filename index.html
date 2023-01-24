@@ -4,21 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="#">
   
-  <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Interactive card details form</title>
+  <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+  <!-- <a href="javascript:window.open('http://127.0.0.1:5500/index.html', '', 'width=375, height=auto')">windows</a> -->
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+  <div class="container">
+
+    <div class="left">
+      <div class="cards">    
+        <div class="card_back">
+          <img src="./images/bg-card-back.png" alt="">
+          <div class="card_cvv">
+            000
+          </div>
+        </div>
+        <div class="card_front">
+          <img src="./images/bg-card-front.png" alt="">
+          <div class="top_circles">
+            <span class="big"></span>
+            <span class="small"></span>
+          </div>
+          <div class="card_number">0000 0000 0000 0000</div>
+          <div class="card_name">Jane Appleseed</div>
+          <div class="card_expiry_date">00/00</div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <form action=""></form>
+    </div>
+
+  </div>
+
+  
+  
+  
 
   000
 
@@ -43,9 +67,5 @@
   We've added your card details
   Continue
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>

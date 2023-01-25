@@ -12,6 +12,7 @@
     margin: 0;
     border: none;
     background: none;
+    outline: none;
     box-sizing: border-box;
 }
 
@@ -55,6 +56,8 @@ body {
 .card_front {
     left: 1em;
     top: 123px;
+    height: 150px;
+    box-shadow: -5px 10px 30px -15px var(--veryDarkViolet);
 }
 .card_cvv {
     color: var(--lightGrayishViolet);
@@ -105,4 +108,55 @@ body {
     top: 80%;
     right: 1em;
     font-size: .6em;
+}
+
+/* Styling the form */
+form {
+    padding: 0 1em;
+}
+form div {
+    margin-bottom: 1em;
+}
+form label {
+    margin-bottom: .5em;
+    text-transform: uppercase;
+    font-size: .75em;
+    display: block;
+    letter-spacing: 1.3px;
+}
+form input {
+    border: 1px solid var(--lightGrayishViolet);
+    width: 100%;
+    padding: .8em;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 600;
+}
+form input::placeholder {
+    color: var(--lightGrayishViolet);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.exp_cvc{
+    display: flex;
+    gap: 1em;
+    margin-bottom: 0;
+}
+.mm_yy {
+    display: flex;
+    gap: .5em;
+}
+.mm_yy input {
+    width: 22vw;
+}
+.confirm {
+    background-color: var(--veryDarkViolet);
+    width: 100%;
+    padding: .9em;
+    color: white;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1.1px;
 }

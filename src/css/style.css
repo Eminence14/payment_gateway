@@ -141,6 +141,21 @@ form input {
 	font-weight: 600;
 	color: var(--veryDarkViolet);
 }
+form input::-webkit-outer-spin-button,
+form input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+form input[type='number'] {
+  -moz-appearance: textfield;
+}
+form input:focus {
+	border: 1px solid var(--veryDarkViolet);
+}
+form input.unapproved {
+	border: 1px solid var(--error);
+
+}
 form input::placeholder {
 	color: var(--lightGrayishViolet);
 	font-size: 1em;
@@ -154,9 +169,15 @@ form input::placeholder {
 .mm_yy {
 	display: flex;
 	gap: 0.5em;
+	margin-bottom: 0;
 }
 .mm_yy input {
 	width: 22vw;
+}
+span.err_msg {
+	color: var(--error);
+	font-size: .65em;
+	display: none;
 }
 .confirm {
 	background-color: var(--veryDarkViolet);
@@ -195,7 +216,8 @@ form input::placeholder {
     }
     .card_back {
         transform: translate(5%,87%);
-        
+        height: 150px;
+		box-shadow: 15px 20px 10px -17px var(--veryDarkViolet);
     }
     .card_front {
         transform: translate(-15%, -87%);

@@ -115,6 +115,7 @@ body {
 	top: 80%;
 	right: 1em;
 	font-size: 0.6em;
+	letter-spacing: 1.3px;
 }
 
 /* Styling the form */
@@ -189,6 +190,19 @@ span.err_msg {
 	font-weight: 600;
 	cursor: pointer;
 	letter-spacing: 1.1px;
+}
+
+button[type='reset'] {
+	background-color: var(--veryDarkViolet);
+	color: white;
+	padding: .3em;
+	border-radius: 3px;
+	font-family: SpaceGrotesk;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .5em;
+	cursor: pointer;
 }
 
 /* Desktop styles */

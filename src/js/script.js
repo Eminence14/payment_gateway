@@ -3,7 +3,6 @@ reset.addEventListener('click', () => {
     set_details('Jane Appleseed', '0000 0000 0000 0000', '00', '00', '000')
     card_display();
 })
-card_display();
 
 
 function spacer() {

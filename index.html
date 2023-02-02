@@ -38,43 +38,55 @@
       </div>
     </div>
     <div class="right">
-      <form action="">
-        <div>
-          <label for="name">
-            Cardholder Name
-          </label>
-          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" autocomplete="off">
-        </div>
-        <div>
-          <label for="number">
-            Card Number
-          </label>
-          <input type="text" name="number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off"
-            oninput="spacer()" maxlength="19">
-          <span class="err_msg">wrong format, numbers only</span>
-        </div>
-        <div class="exp_cvc">
-          <div class="exp">
-            <label for="exp_date">
-              Exp. Date (MM/YY)
-            </label>
-            <div class="mm_yy">
-              <input type="text" name="exp_date" id="exp_date_MM" placeholder="MM" autocomplete="off"
-              maxlength="2">
-              <input type="text" name="exp_date" id="exp_date_YY" placeholder="YY" autocomplete="off"
-              maxlength="2">
-            </div>
-            <span class="err_msg" id="blanker">Can't be blank</span>
+      <!-- modal -->
+      <div class="modal" id="modal">
+        <img src="./images/icon-complete.svg" alt="" class="complete">
+        <h3>Thank you!</h3>
+        <p class="added">We've added your card details</p>
+        <button id="continue">Continue</button>
 
+      </div>
+
+
+      <!-- form -->
+      <div class="form" id="form">
+        <form action="">
+          <div>
+            <label for="name">
+              Cardholder Name
+            </label>
+            <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" autocomplete="off">
           </div>
-          <div class="cvc">
-            <label for="cvc">CVC</label>
-            <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" autocomplete="off" maxlength="3">
-            <span class="err_msg">Can't be blank</span>
+          <div>
+            <label for="number">
+              Card Number
+            </label>
+            <input type="text" name="number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off"
+              oninput="spacer()" maxlength="19">
+            <span class="err_msg">wrong format, numbers only</span>
           </div>
-        </div>
-        <button type="submit" class="confirm">Confirm</button>
-      </form>
+          <div class="exp_cvc">
+            <div class="exp">
+              <label for="exp_date">
+                Exp. Date (MM/YY)
+              </label>
+              <div class="mm_yy">
+                <input type="text" name="exp_date" id="exp_date_MM" placeholder="MM" autocomplete="off" maxlength="2">
+                <input type="text" name="exp_date" id="exp_date_YY" placeholder="YY" autocomplete="off" maxlength="2">
+              </div>
+              <span class="err_msg" id="blanker">Can't be blank</span>
+        
+            </div>
+            <div class="cvc">
+              <label for="cvc">CVC</label>
+              <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" autocomplete="off" maxlength="3">
+              <span class="err_msg">Can't be blank</span>
+            </div>
+          </div>
+          <button type="submit" class="confirm" id="confirm">Confirm</button>
+        </form>
+      </div>
+      
     </div>
 
 
@@ -82,10 +94,7 @@
     <button type="reset">reset</button>
   </div>
 
-  <!-- 
-  Thank you!
-  We've added your card details
-  Continue -->
+
 
 
   <script src="./src/js/script.js"></script>

@@ -130,3 +130,17 @@ function card_display() {
     card_month.textContent = localStorage.getItem('month')
     card_year.textContent = localStorage.getItem('year')
 }
+
+const openMod = document.getElementById('confirm');
+const closeMod = document.getElementById('continue');
+const form = document.getElementById('form');
+const modal = document.getElementById('modal');
+
+openMod.addEventListener('click', () => {
+    form.classList.add('active');
+    modal.classList.add('active');
+})
+closeMod.addEventListener('click', () => {
+    form.classList.remove('active');
+    modal.classList.remove('active');
+})

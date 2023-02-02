@@ -118,9 +118,63 @@ body {
 	letter-spacing: 1.3px;
 }
 
+
+.form.active {
+	display: none;
+}
+
+/* Styling the modal */
+.modal {
+	text-align: center;
+	margin-top: 100px;
+	flex-direction: column;
+	gap: 1em;
+	display: none;
+	transform: scale(0);
+	opacity: 0;
+	transition: transform 3s forwards ease-in-out;
+}
+.modal.active {
+	display: flex;
+	transform: scale(1);
+	opacity: 1;
+}
+.modal img {
+	width: 100%;
+	max-width: 80px;
+	margin: 0 auto;
+}
+.modal h3 {
+	text-transform: uppercase;
+	word-spacing: 5px;
+	letter-spacing: 5px;
+	font-weight: 400;
+	margin-top: 15px;
+	color: var(--veryDarkViolet);
+}
+.modal .added {
+	color: var(--darkGrayishViolet);
+}
+.modal button {
+	background-color: var(--veryDarkViolet);
+	width: 85%;
+	margin: 0 auto;
+	padding: 1.3em;
+	color: white;
+	letter-spacing: 1.3px;
+	font-size: .8em;
+	border-radius: 8px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
 /* Styling the form */
 form {
 	padding: 0 1em;
+	display: block;
+}
+form.active {
+	display: none;
 }
 form div {
 	margin-bottom: 1em;
@@ -225,7 +279,7 @@ button[type='reset'] {
     .cards {
         position: relative;
         top: 50%;
-        margin-top: -50%;
+        margin-top: -40%;
         transform: translate(50%);
     }
     .card_back {
@@ -240,6 +294,7 @@ button[type='reset'] {
         display: flex;
         justify-content: center;
         align-items: center;
+		width: 100%;
     }
     .right form {
         width: 100%;
@@ -249,4 +304,15 @@ button[type='reset'] {
     .mm_yy input {
         width: 100%;
     }
+	.modal {
+		transform: translateX(50%);
+		width: 100%;
+	}
+	.modal button {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 330px;
+		padding: 1em;
+		margin-top: 2em;
+	}
 }

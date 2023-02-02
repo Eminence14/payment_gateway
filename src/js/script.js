@@ -83,8 +83,6 @@ submit.addEventListener('click', e => {
 
     // verify if cvc is not blank
     const [cvcSpan, cvcInp] = getSpan('cvc')
-    console.log(cvcSpan)
-    console.log(cvcInp)
     if (cvcInp.value === '') {
         cvcSpan.style.display = 'block';
         cvcInp.classList.add('unapproved');
@@ -165,4 +163,8 @@ openMod.addEventListener('click', () => {
 closeMod.addEventListener('click', () => {
     form.classList.remove('active');
     modal.classList.remove('active');
+    const all_input = document.querySelectorAll('input');
+    all_input.forEach(inp => {
+        inp.value = '';
+    })
 })

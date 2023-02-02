@@ -299,7 +299,6 @@ button[type='reset'] {
     .right form {
         width: 100%;
         max-width: 35vw;
-        transform: translateX(70%);
     }
     .mm_yy input {
         width: 100%;

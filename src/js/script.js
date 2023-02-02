@@ -1,3 +1,7 @@
+// A token to proceed to the final
+let completed = false;
+
+
 const reset = document.querySelector('button[type="reset"]')
 reset.addEventListener('click', () => {
     set_details('Jane Appleseed', '0000 0000 0000 0000', '00', '00', '000')
@@ -17,11 +21,16 @@ function spacer() {
 }
 const submit = document.querySelector('.confirm')
 let hasString = false;
-let isBlank = false;
 submit.addEventListener('click', e => {
     e.preventDefault()
 
-
+    // Confirm if name is blank
+    const cardName = document.getElementById('name').value;
+    if (cardName === '') {
+        completed = false;
+    } else {
+        completed = true;
+    }
 
     // Verify if there is no string in the card number
 
@@ -33,11 +42,13 @@ submit.addEventListener('click', e => {
     const [cardNumSpan, cardNumInput] = getSpan('card_number')
     if (hasString) {
         cardNumSpan.style.display = 'block';
-        cardNumInput.classList.add('unapproved')
+        cardNumInput.classList.add('unapproved');
+        completed = false;
         return;
     } else {
         cardNumSpan.style.display = 'none';
         cardNumInput.classList.remove('unapproved')
+        completed = true;
     }
     hasString = false;
 
@@ -48,33 +59,41 @@ submit.addEventListener('click', e => {
     const year = document.getElementById('exp_date_YY');
     const blanker = document.getElementById('blanker')
     if (month.value === '') {
-        month.classList.add('unapproved')
+        month.classList.add('unapproved');
+        completed = false;
     } else {
         month.classList.remove('unapproved')
+        completed = true;
     }
     if (year.value === '') {
-        year.classList.add('unapproved')
+        year.classList.add('unapproved');
+        completed = false;
     } else {
-        year.classList.remove('unapproved')
+        year.classList.remove('unapproved');
+        completed = true;
     }
     if (month.value === '' || year.value === '') {
-        blanker.style.display = 'block'
+        blanker.style.display = 'block';
+        completed = false;
         return
     } else {
         blanker.style.display = 'none'
+        completed = true;
     }
-
-
 
     // verify if cvc is not blank
     const [cvcSpan, cvcInp] = getSpan('cvc')
+    console.log(cvcSpan)
+    console.log(cvcInp)
     if (cvcInp.value === '') {
         cvcSpan.style.display = 'block';
         cvcInp.classList.add('unapproved');
+        completed = false;
         return;
     } else {
         cvcSpan.style.display = 'none';
         cvcInp.classList.remove('unapproved')
+        completed = true;
     }
 
 
@@ -87,6 +106,7 @@ submit.addEventListener('click', e => {
 
     set_details(name, cardNum, form_month, form_year, form_cvc)
     card_display();
+
 })
 
 
@@ -137,8 +157,10 @@ const form = document.getElementById('form');
 const modal = document.getElementById('modal');
 
 openMod.addEventListener('click', () => {
-    form.classList.add('active');
-    modal.classList.add('active');
+    if (completed) {
+        form.classList.add('active');
+        modal.classList.add('active');
+    }
 })
 closeMod.addEventListener('click', () => {
     form.classList.remove('active');
